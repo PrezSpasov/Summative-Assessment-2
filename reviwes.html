@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Reviews</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <a href="#">Pages</a>
+                <ul class="dropdown">
+                    <li><a href="signup.html">Sign Up</a></li>
+                    <li><a href="login.html">Log In</a></li>
+                    <li><a href="account.html">Account Management</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="resource-post.html">Post Resource</a></li>
+                    <li><a href="resources.html">Available Resources</a></li>
+                    <li><a href="reviews.html">User Reviews</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Reviews Section -->
+    <header>
+        <h1>User Reviews</h1>
+    </header>
+    <section>
+        <!-- Submit Review -->
+        <form action="/submit-review" method="POST">
+            <label for="resource">Resource:</label>
+            <input type="text" id="resource" name="resource" placeholder="Enter resource name" required>
+
+            <label for="rating">Rating (1-5):</label>
+            <input type="number" id="rating" name="rating" min="1" max="5" required>
+
+            <label for="review">Your Review:</label>
+            <textarea id="review" name="review" rows="4" placeholder="Write your feedback" required></textarea>
+
+            <button type="submit">Submit Review</button>
+        </form>
+
+        <!-- Display Reviews -->
+        <h2>Recent Reviews</h2>
+        <div id="reviews">
+            <article>
+                <h3>Resource: Sample Resource Title</h3>
+                <p>Rating: ⭐⭐⭐⭐</p>
+                <p>Review: This tool was very helpful!</p>
+                <button type="button">Upvote 👍 (10)</button>
+            </article>
+            <!-- More reviews will populate here dynamically -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 AI Resource Hub</p>
+    </footer>
+</body>
+</html>

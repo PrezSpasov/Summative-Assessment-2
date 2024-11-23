@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Resource</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <a href="#">Pages</a>
+                <ul class="dropdown">
+                    <li><a href="signup.html">Sign Up</a></li>
+                    <li><a href="login.html">Log In</a></li>
+                    <li><a href="account.html">Account Management</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="resource-post.html">Post Resource</a></li>
+                    <li><a href="resources.html">Available Resources</a></li>
+                    <li><a href="reviews.html">User Reviews</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Post Resource Form -->
+    <header>
+        <h1>Post a Resource</h1>
+    </header>
+    <form action="/post-resource" method="POST">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
+
+        <label for="category">Category:</label>
+        <select id="category" name="category" required>
+            <option value="AI Tools">AI Tools</option>
+            <option value="Tutorials">Tutorials</option>
+            <option value="Articles">Articles</option>
+            <option value="GitHub Repositories">GitHub Repositories</option>
+        </select>
+
+        <label for="link">Resource Link:</label>
+        <input type="url" id="link" name="link" required>
+
+        <button type="submit">Post Resource</button>
+    </form>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 AI Resource Hub</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Resources</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <a href="#">Pages</a>
+                <ul class="dropdown">
+                    <li><a href="signup.html">Sign Up</a></li>
+                    <li><a href="login.html">Log In</a></li>
+                    <li><a href="account.html">Account Management</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="resource-post.html">Post Resource</a></li>
+                    <li><a href="resources.html">Available Resources</a></li>
+                    <li><a href="reviews.html">User Reviews</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Resources Section -->
+    <header>
+        <h1>Available Resources</h1>
+    </header>
+    <section>
+        <!-- Search Bar -->
+        <form action="/search" method="GET">
+            <label for="search">Search Resources:</label>
+            <input type="text" id="search" name="search" placeholder="Enter keywords">
+            <button type="submit">Search</button>
+        </form>
+
+        <!-- Filter Dropdown -->
+        <form action="/filter" method="GET">
+            <label for="category">Filter by Category:</label>
+            <select id="category" name="category">
+                <option value="All">All</option>
+                <option value="AI Tools">AI Tools</option>
+                <option value="Tutorials">Tutorials</option>
+                <option value="Articles">Articles</option>
+                <option value="GitHub Repositories">GitHub Repositories</option>
+            </select>
+            <button type="submit">Filter</button>
+        </form>
+
+        <!-- Resources List -->
+        <div id="resources">
+            <article>
+                <h2>Sample Resource Title</h2>
+                <p>Description: This is a brief description of the resource.</p>
+                <p>Category: AI Tools</p>
+                <a href="https://example.com" target="_blank">Visit Resource</a>
+            </article>
+            <!-- More resources will populate here dynamically -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 AI Resource Hub</p>
+    </footer>
+</body>
+</html>

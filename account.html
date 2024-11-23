@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <a href="#">Pages</a>
+                <ul class="dropdown">
+                    <li><a href="signup.html">Sign Up</a></li>
+                    <li><a href="login.html">Log In</a></li>
+                    <li><a href="account.html">Account Management</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="resource-post.html">Post Resource</a></li>
+                    <li><a href="resources.html">Available Resources</a></li>
+                    <li><a href="reviews.html">User Reviews</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Account Management Section -->
+    <header>
+        <h1>Manage Your Account</h1>
+    </header>
+    <form action="/update-profile" method="POST" enctype="multipart/form-data">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone">
+
+        <label for="profilePic">Profile Picture:</label>
+        <input type="file" id="profilePic" name="profilePic" accept="image/*">
+
+        <label for="interests">Your Interests:</label>
+        <textarea id="interests" name="interests" rows="4"></textarea>
+
+        <button type="submit">Save Changes</button>
+    </form>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 AI Resource Hub</p>
+    </footer>
+</body>
+</html>
