@@ -11,7 +11,19 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="resources.html">Available Resources</a></li>
+            <li>
+                <a href="#">Pages</a>
+                <ul class="dropdown">
+                    <li><a href="signup.html">Sign Up</a></li>
+                    <li><a href="login.html">Log In</a></li>
+                    <li><a href="account.html">Account Management</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="resource-post.html">Post Resource</a></li>
+                    <li><a href="resources.html">Available Resources</a></li>
+                    <li><a href="reviews.html">User Reviews</a></li>
+                </ul>
+            </li>
         </ul>
     </nav>
 
@@ -19,55 +31,28 @@
     <header>
         <h1>Create an Account</h1>
     </header>
-    <form id="signupForm">
-        <label for="fullName">Full Name:</label>
+    <form action="/register" method="POST" enctype="multipart/form-data">
+        <label for="fullName">Full Name (Required):</label>
         <input type="text" id="fullName" name="fullName" required>
 
-        <label for="email">Email:</label>
+        <label for="email">Email (Required):</label>
         <input type="email" id="email" name="email" required>
 
-        <label for="phone">Phone:</label>
+        <label for="phone">Phone Number (Optional):</label>
         <input type="tel" id="phone" name="phone">
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+        <label for="profilePic">Profile Picture:</label>
+        <input type="file" id="profilePic" name="profilePic" accept="image/*">
 
-        <label for="interests">Interests:</label>
-        <textarea id="interests" name="interests"></textarea>
+        <label for="interests">Your Interests:</label>
+        <textarea id="interests" name="interests" rows="4" placeholder="Describe your interests"></textarea>
 
         <button type="submit">Sign Up</button>
     </form>
 
-    <script>
-        const form = document.getElementById('signupForm');
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault(); // Prevent page refresh
-
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
-
-            try {
-                const response = await fetch('http://localhost:5000/auth/register', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data),
-                });
-
-                if (!response.ok) {
-                    const error = await response.json();
-                    alert(`Sign-up failed: ${error.error}`);
-                    return;
-                }
-
-                const result = await response.json();
-                // Redirect to account page
-                window.location.href = result.redirectUrl;
-            } catch (err) {
-                console.error('Error during sign-up:', err);
-                alert('An error occurred. Please try again.');
-            }
-        });
-    </script>
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 AI Resource Hub</p>
+    </footer>
 </body>
 </html>

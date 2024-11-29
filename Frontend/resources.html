@@ -27,59 +27,46 @@
         </ul>
     </nav>
 
-    <!-- Available Resources Section -->
+    <!-- Resources Section -->
     <header>
         <h1>Available Resources</h1>
     </header>
     <section>
-        <table id="resourcesTable">
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Category</th>
-                    <th>Link</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Rows will be dynamically inserted here -->
-            </tbody>
-        </table>
+        <!-- Search Bar -->
+        <form action="/search" method="GET">
+            <label for="search">Search Resources:</label>
+            <input type="text" id="search" name="search" placeholder="Enter keywords">
+            <button type="submit">Search</button>
+        </form>
+
+        <!-- Filter Dropdown -->
+        <form action="/filter" method="GET">
+            <label for="category">Filter by Category:</label>
+            <select id="category" name="category">
+                <option value="All">All</option>
+                <option value="AI Tools">AI Tools</option>
+                <option value="Tutorials">Tutorials</option>
+                <option value="Articles">Articles</option>
+                <option value="GitHub Repositories">GitHub Repositories</option>
+            </select>
+            <button type="submit">Filter</button>
+        </form>
+
+        <!-- Resources List -->
+        <div id="resources">
+            <article>
+                <h2>Sample Resource Title</h2>
+                <p>Description: This is a brief description of the resource.</p>
+                <p>Category: AI Tools</p>
+                <a href="https://example.com" target="_blank">Visit Resource</a>
+            </article>
+            <!-- More resources will populate here dynamically -->
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <p>© 2024 AI Resource Hub</p>
     </footer>
-
-    <script>
-        // Fetch resources from the backend and display them in the table
-        async function loadResources() {
-            try {
-                const response = await fetch('http://localhost:5000/resources');
-                const resources = await response.json();
-
-                const tableBody = document.querySelector('#resourcesTable tbody');
-                tableBody.innerHTML = ''; // Clear any existing rows
-
-                resources.forEach(resource => {
-                    const row = `
-                        <tr>
-                            <td>${resource.title}</td>
-                            <td>${resource.description}</td>
-                            <td>${resource.category}</td>
-                            <td><a href="${resource.link}" target="_blank">View</a></td>
-                        </tr>
-                    `;
-                    tableBody.innerHTML += row;
-                });
-            } catch (error) {
-                console.error('Error fetching resources:', error);
-            }
-        }
-
-        // Load resources when the page loads
-        window.onload = loadResources;
-    </script>
 </body>
 </html>
